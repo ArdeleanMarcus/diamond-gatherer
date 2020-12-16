@@ -84,6 +84,8 @@ io.on('connection', function(socket){
         io.emit('display-counter', counter);
     })
 
+    io.emit('display-counter', counter); // I added a new emit to all sockets with the curent count number 
+
     socket.on('disconnect', function(){ // Checking when a user disconnects
         console.log('[SOCKET DISCONNECTED]' + socket.id); 
         count--;
